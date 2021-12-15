@@ -1,330 +1,296 @@
-@import '~bootstrap/scss/bootstrap.scss';
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+@import "~bootstrap/scss/bootstrap.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap");
 
-
-$dark-blue : #061E38;
-$indigo :#553DF7 ;
-$dark-indigo:#3730A3;
+$dark-blue: #061e38;
+$indigo: #553df7;
+$dark-indigo: #3730a3;
 
 $medium: 700px;
 
-    body{
-        margin: 0px;
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.navbar {
+  padding: 15px 0px;
+  .banner {
+    width: 100%;
+    background-color: $indigo;
+    color: white;
+    padding: 5px;
+    font-weight: 600;
+  }
+
+  .navbar-nav {
+    .nav-link {
+      font-family: "Poppins";
+      font-weight: 400;
+      margin-right: 20px;
+
+      &:hover {
+        color: $indigo;
+        transition: all 0.5s;
+      }
+
+      &.active {
+        color: $indigo;
+      }
+    }
+
+    .nav-item.dropdown {
+      a {
+        &::after {
+          display: none;
+        }
+      }
+
+      .dropdown-menu {
+        border: none;
         padding: 0px;
+        overflow: hidden;
+
+        .dropdown-item {
+          width: 100%;
+          padding: 10px 30px;
+
+          &:hover {
+            transition: all 0.5s;
+            background-color: rgba($indigo, 0.15);
+          }
+
+          &:active {
+            background-color: rgba($indigo, 0.15);
+          }
+
+          &:focus {
+            background-color: rgba($indigo, 0.15);
+          }
+        }
+      }
     }
-    
+  }
 
-    .navbar{
-        padding: 15px 0px;
-        .banner{
-            width: 100%;
-            background-color: $indigo;
-            color:white;
-            padding: 5px;
-            font-weight: 600;
-        }
+  .navbar-toggler {
+    border: none;
+    &:focus {
+      outline: none !important;
+      box-shadow: none;
+    }
+  }
 
-        .navbar-nav{
-            .nav-link{
-                font-family: 'Poppins';
-                font-weight: 400;
-                margin-right: 20px;
+  .navbar-collapse {
+    .nav-link {
+      color: black;
+    }
+  }
+}
 
-                &:hover{
-                    color: $indigo;
-                    transition: all .5s;
-                }
+.carousel {
+  margin-top: 100px;
 
-                &.active{
-                    color: $indigo;
-                }
-                
-            }
+  .carousel-button {
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 25px;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    color: $indigo;
+  }
+}
 
-            .nav-item.dropdown{
-                a{
-                    &::after{
-                        display: none;
-                    }
-                }
+.layanan {
+  .layanan-title {
+    color: $dark-blue;
+    font-family: "Ubuntu";
+    font-weight: 600;
+    font-size: 35px;
+    text-align: center;
+  }
 
-                .dropdown-menu{
-                    border: none;
-                    padding: 0px;
-                    overflow: hidden;
+  .layanan-items {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    // flex-wrap: wrap;
 
-                    .dropdown-item{
-                        width: 100%;
-                        padding: 10px 30px;
-
-                        &:hover{
-                            transition: all .5s;
-                            background-color: rgba($indigo,0.15);
-                        }
-
-                        &:active{
-                            background-color: rgba($indigo,0.15);
-                        }
-
-                        &:focus{
-                            background-color: rgba($indigo,0.15);
-                        }
-                       
-                    }
-                }
-            }
-            
-        }
-
-
-        .navbar-toggler{
-            border: none;
-            &:focus{
-                outline: none !important;
-                box-shadow: none;
-            }
-        }
-
-
-        .navbar-collapse{
-            .nav-link{
-                color: black;
-            }
-        }
+    .layanan-divider {
+      height: 80px;
+      width: 1px;
+      background-color: #bbbbbb;
+      align-self: center;
     }
 
+    .layanan-button {
+      display: flex;
+      color: $indigo;
+      font-size: 20px;
+      text-decoration: none;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      text-align: center;
+      padding: 20px;
 
-    .carousel{
-        margin-top: 100px;
-        
-        .carousel-button{
-            border: none;
-            width: 50px;
-            height: 50px;
-            font-size: 30px;
-            border-radius: 25px;
-            background-color: white;
-            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
-            color: $indigo;
-        }
-    
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+
+      &::after {
+        content: "";
+        width: 100%;
+        transform: scaleX(0);
+        height: 4px;
+        bottom: 0;
+        border-radius: 2px;
+        left: 0;
+        background-color: $indigo;
+        transform-origin: bottom right;
+        transition: transform 0.5s ease-out;
+      }
+
+      span {
+        font-family: "Poppins";
+        color: $dark-blue;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.footer {
+  font-family: "Poppins";
+  background-color: #f9fafb;
+  padding: 50px 0px 0px 0px;
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+
+    .footer-brand-logo {
+      align-self: flex-start;
     }
 
+    .footer-brand-desc {
+      color: $dark-blue;
+      margin-top: 15px;
+    }
+  }
 
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
 
-    .layanan{
-        .layanan-title{
-            color: $dark-blue;
-            font-family:'Ubuntu' ;
-            font-weight: 600;
-            font-size: 35px;
-            text-align: center;
-        }
-
-
-
-        .layanan-items{
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            // flex-wrap: wrap;
-
-
-            .layanan-divider{
-                height: 80px;
-                width: 1px;
-                background-color: #bbbbbb;
-                align-self: center;
-            }
-
-            .layanan-button{
-                display: flex;
-                color:$indigo ;
-                font-size: 20px;
-                text-decoration: none;
-                flex-direction: column;
-                justify-content: center;
-                align-content: center;
-                text-align: center;
-                padding: 20px;
-
-
-
-                &:hover::after{
-                    transform: scaleX(1);
-                    transform-origin: bottom left;
-                }
-                
-
-                &::after{
-                    content: '';
-                    width: 100%;
-                    transform: scaleX(0);
-                    height: 4px;
-                    bottom: 0;
-                    border-radius: 2px;
-                    left: 0;
-                    background-color: $indigo;
-                    transform-origin: bottom right;
-                    transition: transform 0.5s ease-out;
-                }
-
-                span{
-                    font-family: 'Poppins';
-                    color: $dark-blue;
-                    font-size: 16px;
-                }
-            }
-        }
+    .footer-nav-header {
+      color: $dark-blue;
+      font-weight: 600;
     }
 
+    .footer-nav-link {
+      color: $dark-blue;
+      text-decoration: none;
+      margin-top: 15px;
 
-    .footer{
-        font-family: 'Poppins';
-        background-color: #F9FAFB;
-        padding: 50px 0px 0px 0px;
+      &:hover {
+        color: $indigo;
+        transition: all 0.5s;
+      }
+    }
+  }
 
-            .footer-brand{
-                display: flex;
-                flex-direction: column;
-
-                .footer-brand-logo{
-                    align-self: flex-start;
-                }
-
-                .footer-brand-desc{
-                    color: $dark-blue;
-                    margin-top: 15px;
-                }
-            }
-            
-            .footer-nav{
-                display: flex;
-                flex-direction: column;
-
-                .footer-nav-header{
-                    color: $dark-blue;
-                    font-weight: 600;
-                }
-
-                .footer-nav-link{
-                    color: $dark-blue;
-                    text-decoration: none;
-                    margin-top: 15px;
-                    
-                    &:hover{
-                        color: $indigo;
-                        transition: all .5s;
-                    }
-                }
-            }
-
-
-            .footer-socialmedia{
-                .footer-socialmedia-header{
-                    font-weight: 600;
-                    color: $dark-blue;
-                }
-
-                .footer-socialmedia-nav{
-                    .footer-socialmedia-nav-link{
-                        color: $dark-blue;
-                        font-size: 24px;
-                        margin-right: 20px;
-
-                        &:hover{
-                            color:$indigo;
-                            transition: all .5s;
-                        }
-                    }
-                }
-            }
-
-        
-
-        .footer-copyright{
-            padding: 20px 0px;
-            margin-top: 20px;
-            background-color: $dark-blue;
-            .footer-copyright-text{
-                color: white;
-                margin-bottom: 0px;
-            }
-        }
+  .footer-socialmedia {
+    .footer-socialmedia-header {
+      font-weight: 600;
+      color: $dark-blue;
     }
 
+    .footer-socialmedia-nav {
+      .footer-socialmedia-nav-link {
+        color: $dark-blue;
+        font-size: 24px;
+        margin-right: 20px;
 
+        &:hover {
+          color: $indigo;
+          transition: all 0.5s;
+        }
+      }
+    }
+  }
 
+  .footer-copyright {
+    padding: 20px 0px;
+    margin-top: 20px;
+    background-color: $dark-blue;
+    .footer-copyright-text {
+      color: white;
+      margin-bottom: 0px;
+    }
+  }
+}
 
 //Medium Screen
 @media screen and (min-width: $medium) {
-        
+  .layanan {
+    .layanan-title {
+      color: $dark-blue;
+      font-family: "Ubuntu";
+      font-weight: 600;
+      font-size: 35px;
+      text-align: center;
+    }
 
-        .layanan{
-            .layanan-title{
-                color: $dark-blue;
-                font-family:'Ubuntu' ;
-                font-weight: 600;
-                font-size: 35px;
-                text-align: center;
-            }
+    .layanan-items {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      // flex-wrap: wrap;
 
+      .layanan-divider {
+        height: 80px;
+        width: 1px;
+        background-color: #bbbbbb;
+        align-self: center;
+      }
 
+      .layanan-button {
+        display: flex;
+        color: $indigo;
+        font-size: 50px;
+        text-decoration: none;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        padding: 20px 80px;
 
-            .layanan-items{
-                display: flex;
-                justify-content: center;
-                align-content: center;
-                // flex-wrap: wrap;
-
-
-                .layanan-divider{
-                    height: 80px;
-                    width: 1px;
-                    background-color: #bbbbbb;
-                    align-self: center;
-                }
-
-                .layanan-button{
-                    display: flex;
-                    color:$indigo ;
-                    font-size: 50px;
-                    text-decoration: none;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-content: center;
-                    text-align: center;
-                    padding: 20px 80px;
-
-
-
-                    &:hover::after{
-                        transform: scaleX(1);
-                        transform-origin: bottom left;
-                    }
-                    
-
-                    &::after{
-                        content: '';
-                        width: 100%;
-                        transform: scaleX(0);
-                        height: 4px;
-                        bottom: 0;
-                        border-radius: 2px;
-                        left: 0;
-                        background-color: $indigo;
-                        transform-origin: bottom right;
-                        transition: transform 0.5s ease-out;
-                    }
-
-                    span{
-                        font-family: 'Poppins';
-                        color: $dark-blue;
-                        font-size: 20px;
-                    }
-                }
-            }
+        &:hover::after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
         }
 
-  }
+        &::after {
+          content: "";
+          width: 100%;
+          transform: scaleX(0);
+          height: 4px;
+          bottom: 0;
+          border-radius: 2px;
+          left: 0;
+          background-color: $indigo;
+          transform-origin: bottom right;
+          transition: transform 0.5s ease-out;
+        }
 
+        span {
+          font-family: "Poppins";
+          color: $dark-blue;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
