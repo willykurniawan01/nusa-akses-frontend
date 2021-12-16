@@ -12,6 +12,52 @@ body {
   padding: 0px;
 }
 
+.btn-custom-primary {
+  background-color: $indigo;
+  box-shadow: none;
+  border: none;
+  color: #fff;
+  padding: 10px 40px;
+  font-family: "Poppins";
+  border-radius: 50px;
+}
+
+.btn-primary {
+  background-color: $indigo !important;
+}
+
+.card {
+  border-radius: 30px 30px 30px 0px;
+  overflow: hidden;
+
+  .card-title {
+    a {
+      font-size: 1.4rem;
+      color: $dark-blue;
+      text-decoration: none;
+      &:hover {
+        color: $indigo;
+        transition: 0.5s all;
+      }
+    }
+  }
+
+  .btn {
+    border-radius: 50%;
+  }
+}
+
+input.form-control {
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-family: "Poppins";
+}
+
+input.form-control::placeholder {
+  font-family: "Poppins";
+  letter-spacing: 1px;
+}
+
 .navbar {
   padding: 15px 0px;
   .banner {

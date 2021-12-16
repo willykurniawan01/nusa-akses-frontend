@@ -1,0 +1,19 @@
+.preloader {
+  background-color: #061e38;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preloader-logo {
+  background-color: #fff;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+}

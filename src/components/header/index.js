@@ -58,7 +58,9 @@ const Header = () => {
               <NavDropdown.Item href="#action/3.1">Profil</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Sejarah</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#">Berita</Nav.Link>
+            <Link className="nav-link" to="/berita">
+              Berita
+            </Link>
           </Nav>
           <Nav>
             <NavDropdown
