@@ -1,4 +1,4 @@
-import { Home, About, Profile, Berita } from "../pages";
+import { Home, About, Profile, Berita, DetailBerita } from "../pages";
 
 const AppRoutes = [
   {
@@ -25,6 +25,12 @@ const AppRoutes = [
     path: "/berita",
     exact: true,
     component: Berita,
+  },
+  {
+    name: "DetailBerita",
+    path: "/berita/:slug",
+    exact: true,
+    component: DetailBerita,
   },
 ];
 

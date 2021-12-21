@@ -43,9 +43,6 @@ const Header = () => {
               <Link className="dropdown-item" to="/profile-perusahaan">
                 Profile Perusahaan
               </Link>
-              <NavDropdown.Item href="#action/3.2">
-                Sejarah Perusahaan
-              </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown
               title={

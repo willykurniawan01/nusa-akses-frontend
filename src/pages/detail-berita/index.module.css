@@ -1,0 +1,43 @@
+.postTitle {
+  font-family: "Poppins";
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.postContent {
+  font-family: "Poppins";
+  text-align: justify;
+  font-size: 1rem;
+}
+
+.postCardTitle {
+  font-family: "Poppins";
+  text-decoration: none;
+  font-size: 1rem;
+  color: #000;
+  font-weight: 400;
+  transition: 0.5s all;
+}
+
+.postCardTitle:hover {
+  transition: 0.5s all;
+  color: #553df7;
+}
+
+.postCardDate {
+  font-family: "Poppins";
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.postDate {
+  font-family: "Poppins";
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.postDate span {
+  margin-left: 10px;
+}
