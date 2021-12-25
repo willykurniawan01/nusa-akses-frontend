@@ -5,6 +5,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import setting from "../../settings";
 import { Preloader } from "../../pages";
 import styles from "./index.module.css";
+import pic1 from "../../assets/images/pic1.png";
+import partner from "../../assets/images/partner.png";
 
 const Home = () => {
   const [slide, setSlide] = useState([]);
@@ -75,28 +77,82 @@ const Home = () => {
                       </div>
                     );
                   })}
-
-                  {/* <a href="#" className="layanan-button">
-                    <i class="bi bi-wifi"></i>
-                    <span>Wifi</span>
-                  </a>
-                  <div className="layanan-divider"></div>
-                  <a href="#" className="layanan-button">
-                    <i class="bi bi-cloud"></i>
-                    <span>Cloud</span>
-                  </a>
-                  <div className="layanan-divider"></div>
-                  <a href="#" className="layanan-button">
-                    <i class="bi bi-shield-lock"></i>
-                    <span>Security</span>
-                  </a> */}
                 </div>
               </Col>
             </Row>
 
-            <Row className={styles.berita}>
-              <Col></Col>
-            </Row>
+            <div className="row mt-5">
+              <div className="col-12 col-sm-5">
+                <img src={pic1} className="img-fluid" alt="" />
+              </div>
+              <div className="col-12 col-sm-7">
+                <div className="row">
+                  <h4 className={styles.subTitle}>lorem ipsum</h4>
+                </div>
+                <div className="row">
+                  <h4 className={styles.title}>
+                    Lorem ipsum dolor sit amet consectetur.
+                  </h4>
+                </div>
+                <div className="row">
+                  <p className={styles.content}>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Aspernatur doloremque, autem placeat ducimus ullam aut.
+                    Deserunt ab doloribus vitae, eveniet corrupti saepe facere,
+                    excepturi nam modi corporis obcaecati sapiente voluptas
+                    iusto, aspernatur labore esse recusandae nihil
+                    reprehenderit? Iusto minima dolorem quaerat voluptas ad. Ea
+                    totam, optio officiis ex cum aspernatur!
+                  </p>
+                  <button className="btn btn-custom-primary w-50">
+                    Selengkapnya
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="row mt-5">
+              <div className="col-12 col-sm-7">
+                <div className="row">
+                  <h4 className={styles.subTitle}>lorem ipsum</h4>
+                </div>
+                <div className="row">
+                  <h4 className={styles.title}>
+                    Lorem ipsum dolor sit amet consectetur.
+                  </h4>
+                </div>
+                <div className="row">
+                  <p className={styles.content}>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Aspernatur doloremque, autem placeat ducimus ullam aut.
+                    Deserunt ab doloribus vitae, eveniet corrupti saepe facere,
+                    excepturi nam modi corporis obcaecati sapiente voluptas
+                    iusto, aspernatur labore esse recusandae nihil
+                    reprehenderit? Iusto minima dolorem quaerat voluptas ad. Ea
+                    totam, optio officiis ex cum aspernatur!
+                  </p>
+                  <button className="btn btn-custom-primary w-50">
+                    Selengkapnya
+                  </button>
+                </div>
+              </div>
+              <div className="col-12 col-sm-5">
+                <img src={pic1} className="img-fluid" alt="" />
+              </div>
+            </div>
+
+            <div className="row">
+              
+            </div>
+
+            <div className="row justify-content-center mt-5  mb-5">
+              <div className="col-4 mt-5">
+                <h4 className={`${styles.title} text-center`}>
+                  Bussiness Partner
+                </h4>
+                <img className="img-fluid mt-5" src={partner} />
+              </div>
+            </div>
           </Container>
         </div>
         <Footer />

@@ -4,5 +4,14 @@ import Profile from "./profile";
 import Preloader from "./preloader";
 import Berita from "./berita";
 import DetailBerita from "./detail-berita";
+import DetailServices from "./detail-service";
 
-export { Home, About, Profile, Preloader, Berita, DetailBerita };
+export {
+  Home,
+  About,
+  Profile,
+  Preloader,
+  Berita,
+  DetailBerita,
+  DetailServices,
+};

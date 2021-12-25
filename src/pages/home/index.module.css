@@ -1,0 +1,20 @@
+.subTitle {
+  font-family: "Ubuntu";
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #4e5764;
+}
+
+.title {
+  font-family: "Ubuntu";
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #061e38;
+}
+
+.content {
+  font-family: "Poppins";
+  color: #4e5764;
+  font-weight: 300;
+  font-size: 1.2rem;
+}

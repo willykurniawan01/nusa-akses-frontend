@@ -5,18 +5,31 @@ import tower from "../../assets/images/tower.png";
 import { Col, Container, Row } from "react-bootstrap";
 import { Preloader } from "../../pages";
 import styles from "./index.module.css";
+import setting from "../../settings";
 
 import AOS from "aos";
 
 const Profile = () => {
   const [preloader, setPreloader] = useState(true);
+  const [settingPerusahaan, setSettingPerusahaan] = useState([]);
 
   useEffect(() => {
     AOS.init();
     setTimeout(() => {
       setPreloader(false);
     }, 800);
+    loadSetting();
   }, []);
+
+  const loadSetting = async () => {
+    try {
+      let response = await fetch(setting.settingPerusahaanUrl);
+      let data = await response.json();
+      setSettingPerusahaan(data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   if (preloader) {
     return <Preloader />;
@@ -52,14 +65,10 @@ const Profile = () => {
                     <h5>Tentang Nusa Akses</h5>
                   </div>
                   <div className={styles.profileContentDesc}>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Aenean mattis tellus at magna faucibus pellentesque in nec
-                      eros. Nam dignissim ac tellus in ultrices.{" "}
-                    </p>
-                    <button className="btn-transparent">
+                    <p>{settingPerusahaan.tentang.value}</p>
+                    {/* <button className="btn-transparent">
                       Selengkapnya <i class="bi bi-arrow-right-circle"></i>
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </Col>
@@ -83,11 +92,7 @@ const Profile = () => {
                 <h5>Visi</h5>
               </div>
               <div className={styles.textContent}>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur ut cumque tempora ex quae eaque velit blanditiis
-                  doloribus rerum fuga.
-                </p>
+                <p>{settingPerusahaan.visi.value}</p>
               </div>
             </div>
             <div className="text" data-aos="fade-right">
@@ -95,11 +100,7 @@ const Profile = () => {
                 <h5>Misi</h5>
               </div>
               <div className={styles.textContent}>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur ut cumque tempora ex quae eaque velit blanditiis
-                  doloribus rerum fuga.
-                </p>
+                <p>{settingPerusahaan.misi.value}</p>
               </div>
             </div>
           </div>
@@ -109,30 +110,26 @@ const Profile = () => {
                 <h5>Pimpinan Perusahaan</h5>
               </div>
               <div className={styles.textContent}>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur ut cumque tempora ex quae eaque velit blanditiis
-                  doloribus rerum fuga.
-                </p>
+                <p>{settingPerusahaan.pimpinan.value}</p>
               </div>
             </div>
 
-            <button className={styles.buttonTransparent}>
+            {/* <button className={styles.buttonTransparent}>
               Selengkapnya <i class="bi bi-arrow-right-circle"></i>
-            </button>
+            </button> */}
           </div>
         </div>
 
-        <div className="history">
-          <div className="history-left">
-            <h4>Sejarah Kami</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              soluta recusandae voluptatum fugit voluptatibus numquam quia
-              provident laudantium. Sed, in quisquam illum autem consectetur
-              illo non explicabo laudantium! Debitis incidunt in eaque.
-            </p>
+        <div className={styles.history}>
+          <div className="container">
+            <div className="row py-5">
+              <div className="col">
+                <h4>Sejarah Kami</h4>
+                <p>{settingPerusahaan.sejarah.value}</p>
+              </div>
+            </div>
           </div>
+
           <div className="history-divider"></div>
           <div className="history-right"></div>
         </div>

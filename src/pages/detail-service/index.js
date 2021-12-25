@@ -17,9 +17,9 @@ import style from "./index.module.css";
 import { useParams } from "react-router-dom";
 import moment from "moment";
 
-const DetailBerita = () => {
+const DetailServices = () => {
   const [preloader, setPreloader] = useState(true);
-  const [beritaDetail, setBeritaDetail] = useState([]);
+  const [ServicesDetail, setServicesDetail] = useState([]);
   let { slug } = useParams();
 
   useEffect(() => {
@@ -27,14 +27,14 @@ const DetailBerita = () => {
       setPreloader(false);
     }, 1000);
 
-    loadBeritaDetail();
+    loadServicesDetail();
   }, []);
 
-  const loadBeritaDetail = async () => {
+  const loadServicesDetail = async () => {
     try {
-      const response = await fetch(`${setting.beritaUrl}/${slug}`);
+      const response = await fetch(`${setting.ServicesUrl}/${slug}`);
       const data = await response.json();
-      setBeritaDetail(data);
+      setServicesDetail(data);
     } catch (res) {
       console.log(res);
     }
@@ -53,7 +53,7 @@ const DetailBerita = () => {
                 <Link to="/">Home</Link>
               </li>
               <li class="breadcrumb-item active" aria-current="page">
-                Berita
+                Services
               </li>
             </ol>
           </div>
@@ -64,18 +64,20 @@ const DetailBerita = () => {
               <div className="row">
                 <div className="col">
                   <img
-                    src={beritaDetail.picture}
+                    src={ServicesDetail.picture}
                     className="img-fluid"
                     alt=""
                   />
-                  <h4 className={style.postTitle}>{beritaDetail.judul}</h4>
+                  <h4 className={style.postTitle}>{ServicesDetail.judul}</h4>
                   <div className={style.postDate}>
                     <i class="bi bi-calendar"></i>
-                    <span>{moment(beritaDetail.created_at).format("LLL")}</span>
+                    <span>
+                      {moment(ServicesDetail.created_at).format("LLL")}
+                    </span>
                   </div>
                   <div
                     className={style.postContent}
-                    dangerouslySetInnerHTML={{ __html: beritaDetail.content }}
+                    dangerouslySetInnerHTML={{ __html: ServicesDetail.content }}
                   ></div>
                 </div>
               </div>
@@ -102,4 +104,4 @@ const DetailBerita = () => {
   }
 };
 
-export default DetailBerita;
+export default DetailServices;

@@ -78,6 +78,10 @@
   color: #061e38;
 }
 
+.history {
+  font-family: "Poppins";
+}
+
 @media only screen and (max-width: 600px) {
   .visi {
     background-color: #061e38;

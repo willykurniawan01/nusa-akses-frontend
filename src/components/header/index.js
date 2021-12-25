@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../assets/images/nusa-akses.png";
 import indonesia from "../../assets/images/flag/indonesia.svg";
 import unitedkingdom from "../../assets/images/flag/united-kingdom.svg";
@@ -12,8 +12,26 @@ import {
   Button,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useStater } from "react";
+import setting from "../../settings";
 
 const Header = () => {
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    loadServices();
+  }, []);
+
+  const loadServices = async () => {
+    try {
+      let response = await fetch(setting.servicesUrl);
+      let data = await response.json();
+      setServices(data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Navbar
       className="shadow-sm"
@@ -52,8 +70,13 @@ const Header = () => {
               }
               id="collasible-nav-dropdown"
             >
-              <NavDropdown.Item href="#action/3.1">Profil</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Sejarah</NavDropdown.Item>
+              {services.map(function (data, index) {
+                return (
+                  <Link className="dropdown-item" to="/profile-perusahaan">
+                    {data.name}
+                  </Link>
+                );
+              })}
             </NavDropdown>
             <Link className="nav-link" to="/berita">
               Berita
