@@ -5,6 +5,7 @@ import Preloader from "./preloader";
 import Berita from "./berita";
 import DetailBerita from "./detail-berita";
 import DetailServices from "./detail-service";
+import Pages from "./pages";
 
 export {
   Home,
@@ -14,4 +15,5 @@ export {
   Berita,
   DetailBerita,
   DetailServices,
+  Pages,
 };

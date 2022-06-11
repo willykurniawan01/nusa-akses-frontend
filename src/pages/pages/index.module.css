@@ -1,0 +1,14 @@
+.rounded {
+  border-radius: 50px;
+}
+
+.pageTitle {
+  font-weight: 600;
+  font-family: "Poppins";
+}
+
+.pageContent {
+  font-family: "Poppins";
+  font-size: 18px;
+  line-height: 27px;
+}

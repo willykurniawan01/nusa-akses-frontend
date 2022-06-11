@@ -5,6 +5,7 @@ import {
   Berita,
   DetailBerita,
   DetailServices,
+  Pages,
 } from "../pages";
 
 const AppRoutes = [
@@ -44,6 +45,12 @@ const AppRoutes = [
     path: "/services/:id",
     exact: true,
     component: DetailServices,
+  },
+  {
+    name: "Pages",
+    path: "/page/:id",
+    exact: true,
+    component: Pages,
   },
 ];
 

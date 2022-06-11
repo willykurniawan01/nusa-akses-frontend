@@ -17,9 +17,11 @@ import setting from "../../settings";
 
 const Header = () => {
   const [services, setServices] = useState([]);
+  const [pages, setPages] = useState([]);
 
   useEffect(() => {
     loadServices();
+    loadPages();
   }, []);
 
   const loadServices = async () => {
@@ -27,6 +29,16 @@ const Header = () => {
       let response = await fetch(setting.servicesUrl);
       let data = await response.json();
       setServices(data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const loadPages = async () => {
+    try {
+      let response = await fetch(setting.pagesUrl);
+      let data = await response.json();
+      setPages(data.data);
     } catch (error) {
       console.log(error);
     }
@@ -81,6 +93,13 @@ const Header = () => {
             <Link className="nav-link" to="/berita">
               Berita
             </Link>
+            {pages.map(function (data, index) {
+              return (
+                <Link className="nav-link" to="#">
+                  {data.name}
+                </Link>
+              );
+            })}
           </Nav>
           <Nav>
             <NavDropdown
