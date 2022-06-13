@@ -95,7 +95,7 @@ const Header = () => {
             </Link>
             {pages.map(function (data, index) {
               return (
-                <Link className="nav-link" to="#">
+                <Link className="nav-link" to={`page/${data.id}`}>
                   {data.name}
                 </Link>
               );
