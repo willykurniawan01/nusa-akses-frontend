@@ -7,11 +7,13 @@ import { Preloader } from "../../pages";
 import styles from "./index.module.css";
 import pic1 from "../../assets/images/pic1.png";
 import partner from "../../assets/images/partner.png";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [slide, setSlide] = useState([]);
   const [services, setServices] = useState([]);
   const [preloader, setPreloader] = useState(true);
+  const [berita, setBerita] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -20,6 +22,7 @@ const Home = () => {
     }, 1000);
     loadSliders();
     loadServices();
+    loadBerita();
   }, []);
 
   const loadSliders = async () => {
@@ -40,6 +43,18 @@ const Home = () => {
       let data = await response.json();
 
       setServices(data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const loadBerita = async () => {
+    setLoading(true);
+    try {
+      let response = await fetch(setting.beritaUrl);
+      let data = await response.json();
+
+      setBerita(data);
     } catch (error) {
       console.log(error);
     }
@@ -81,69 +96,71 @@ const Home = () => {
               </Col>
             </Row>
 
-            <div className="row mt-5">
-              <div className="col-12 col-sm-5">
-                <img src={pic1} className="img-fluid" alt="" />
-              </div>
-              <div className="col-12 col-sm-7">
-                <div className="row">
-                  <h4 className={styles.subTitle}>lorem ipsum</h4>
-                </div>
-                <div className="row">
-                  <h4 className={styles.title}>
-                    Lorem ipsum dolor sit amet consectetur.
-                  </h4>
-                </div>
-                <div className="row">
-                  <p className={styles.content}>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Aspernatur doloremque, autem placeat ducimus ullam aut.
-                    Deserunt ab doloribus vitae, eveniet corrupti saepe facere,
-                    excepturi nam modi corporis obcaecati sapiente voluptas
-                    iusto, aspernatur labore esse recusandae nihil
-                    reprehenderit? Iusto minima dolorem quaerat voluptas ad. Ea
-                    totam, optio officiis ex cum aspernatur!
-                  </p>
-                  <button className="btn btn-custom-primary w-50">
-                    Selengkapnya
-                  </button>
-                </div>
-              </div>
-            </div>
+            {berita.map(function (data, index) {
+              if (index % 2 == 0) {
+                return (
+                  <div className="row mt-5">
+                    <div className="col-12 col-sm-5">
+                      <img src={data.picture} className="img-fluid" alt="" />
+                    </div>
+                    <div className="col-12 col-sm-7">
+                      <div className="row">
+                        <h4 className={styles.subTitle}>{data.judul}</h4>
+                      </div>
+                      <div className="row">
+                        <h4 className={styles.title}>{data.judul}</h4>
+                      </div>
+                      <div className="row">
+                        <div
+                          className={styles.content}
+                          dangerouslySetInnerHTML={{
+                            __html: data.content,
+                          }}
+                        ></div>
+                        <Link
+                          to={`berita/${data.slug}`}
+                          className="btn btn-custom-primary w-50"
+                        >
+                          Selengkapnya
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                );
+              } else {
+                return (
+                  <div className="row mt-5">
+                    <div className="col-12 col-sm-7">
+                      <div className="row">
+                        <h4 className={styles.subTitle}>{data.judul}</h4>
+                      </div>
+                      <div className="row">
+                        <h4 className={styles.title}>{data.judul}</h4>
+                      </div>
+                      <div className="row">
+                        <div
+                          className={styles.content}
+                          dangerouslySetInnerHTML={{
+                            __html: data.content,
+                          }}
+                        ></div>
+                        <Link
+                          to={`berita/${data.slug}`}
+                          className="btn btn-custom-primary w-50"
+                        >
+                          Selengkapnya
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="col-12 col-sm-5">
+                      <img src={pic1} className="img-fluid" alt="" />
+                    </div>
+                  </div>
+                );
+              }
+            })}
 
-            <div className="row mt-5">
-              <div className="col-12 col-sm-7">
-                <div className="row">
-                  <h4 className={styles.subTitle}>lorem ipsum</h4>
-                </div>
-                <div className="row">
-                  <h4 className={styles.title}>
-                    Lorem ipsum dolor sit amet consectetur.
-                  </h4>
-                </div>
-                <div className="row">
-                  <p className={styles.content}>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Aspernatur doloremque, autem placeat ducimus ullam aut.
-                    Deserunt ab doloribus vitae, eveniet corrupti saepe facere,
-                    excepturi nam modi corporis obcaecati sapiente voluptas
-                    iusto, aspernatur labore esse recusandae nihil
-                    reprehenderit? Iusto minima dolorem quaerat voluptas ad. Ea
-                    totam, optio officiis ex cum aspernatur!
-                  </p>
-                  <button className="btn btn-custom-primary w-50">
-                    Selengkapnya
-                  </button>
-                </div>
-              </div>
-              <div className="col-12 col-sm-5">
-                <img src={pic1} className="img-fluid" alt="" />
-              </div>
-            </div>
-
-            <div className="row">
-              
-            </div>
+            <div className="row"></div>
 
             <div className="row justify-content-center mt-5  mb-5">
               <div className="col-4 mt-5">

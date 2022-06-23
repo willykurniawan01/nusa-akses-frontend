@@ -84,7 +84,7 @@ const Header = () => {
             >
               {services.map(function (data, index) {
                 return (
-                  <Link className="dropdown-item" to="/profile-perusahaan">
+                  <Link className="dropdown-item" to={`/page/${data.page_id}`}>
                     {data.name}
                   </Link>
                 );
@@ -95,7 +95,7 @@ const Header = () => {
             </Link>
             {pages.map(function (data, index) {
               return (
-                <Link className="nav-link" to={`page/${data.id}`}>
+                <Link className="nav-link" to={`/page/${data.id}`}>
                   {data.name}
                 </Link>
               );
