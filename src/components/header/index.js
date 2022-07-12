@@ -100,6 +100,12 @@ const Header = () => {
                 </Link>
               );
             })}
+            <Nav.Link
+              className="nav-link"
+              href="https://mrtg.nusaakses.net.id/"
+            >
+              MRTG Nusa Akses
+            </Nav.Link>
           </Nav>
           <Nav>
             <NavDropdown

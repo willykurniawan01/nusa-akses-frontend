@@ -16,7 +16,7 @@ const Page = () => {
     }, 1000);
 
     loadPage();
-  }, []);
+  }, [id]);
 
   const loadPage = async () => {
     try {
