@@ -25,16 +25,18 @@ const Footer = () => {
     <div className="footer">
       <Container>
         <Row>
-          <Col xs={6} md={3}>
+          <Col xs={6} md={5}>
             <div className="footer-brand">
               <img className="footer-brand-logo" src={logo} />
               <span className="footer-brand-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Exercitationem, blanditiis?
+                Jl. Brigjen Katamso, Tj. Uncang, Kec. Batu Aji,
+                <p>Kota Batam,Kepulauan Riau 29425</p>
+                <p>E : sales@nusaakses.net.id</p>
+                <p>T: 0821-7016-7025</p>
               </span>
             </div>
           </Col>
-          <Col xs={6} md={3}>
+          {/* <Col xs={6} md={3}>
             <div className="footer-nav">
               <p className="footer-nav-header">Bantuan</p>
               <a href="#" className="footer-nav-link">
@@ -47,8 +49,8 @@ const Footer = () => {
                 Kendala
               </a>
             </div>
-          </Col>
-          <Col xs={6} md={3}>
+          </Col> */}
+          <Col xs={6} md={4}>
             <div className="footer-nav">
               <p className="footer-nav-header">Layanan</p>
               {services.map(function (data, index) {
@@ -74,9 +76,7 @@ const Footer = () => {
         <Row>
           <Col md={3}>
             <div className="footer-socialmedia">
-              <p className="footer-socialmedia-header">
-                Tetap terhubung dengan kami
-              </p>
+              <p className="footer-socialmedia-header">Tetap terhubung dengan kami</p>
               <div className="footer-socialmedia-nav">
                 <a href="" className="footer-socialmedia-nav-link">
                   <i class="bi bi-instagram"></i>
@@ -95,9 +95,7 @@ const Footer = () => {
       </Container>
       <div className="footer-copyright">
         <Container>
-          <p className="footer-copyright-text">
-            © PT Daya Akses Nusantara, 2021.
-          </p>
+          <p className="footer-copyright-text">© PT Daya Akses Nusantara, 2021.</p>
         </Container>
       </div>
     </div>
