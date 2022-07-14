@@ -68,7 +68,6 @@ const Header = () => {
                   Perusahaan <i class="bi bi-chevron-down"></i>
                 </span>
               }
-              id="collasible-nav-dropdown"
             >
               <Link className="dropdown-item" to="/profile-perusahaan">
                 Profile Perusahaan
@@ -80,7 +79,6 @@ const Header = () => {
                   Layanan <i class="bi bi-chevron-down"></i>
                 </span>
               }
-              id="collasible-nav-dropdown"
             >
               {services.map(function (data, index) {
                 return (
@@ -111,11 +109,10 @@ const Header = () => {
             <NavDropdown
               title={
                 <span>
-                  <i class="bi bi-globe"></i> Bahasa Indonesia{" "}
+                  <i class="bi bi-globe"></i> Bahasa Indonesia
                   <i class="bi bi-chevron-down"></i>
                 </span>
               }
-              id="collasible-nav-dropdown"
             >
               <NavDropdown.Item href="#action/3.1">
                 {" "}
