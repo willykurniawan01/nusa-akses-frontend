@@ -1,12 +1,11 @@
+const baseUrl = "http://127.0.0.1:8000";
 const setting = {
-  baseUrl: "https://nusa-akses-backend.w2sdev.com",
-  beritaUrl: "https://nusa-akses-backend.w2sdev.com/api/post",
-  servicesUrl: "https://nusa-akses-backend.w2sdev.com/api/services",
-  settingPerusahaanUrl:
-    "https://nusa-akses-backend.w2sdev.com/api/setting/perusahaan",
-  slidersUrl: "https://nusa-akses-backend.w2sdev.com/api/sliders",
-  pagesUrl: "https://nusa-akses-backend.w2sdev.com/api/pages",
-  detailPageUrl: "https://nusa-akses-backend.w2sdev.com/api/page",
+  beritaUrl: `${baseUrl}/api/post`,
+  servicesUrl: `${baseUrl}/api/services`,
+  settingPerusahaanUrl: `${baseUrl}/api/setting/perusahaan`,
+  slidersUrl: `${baseUrl}/api/sliders`,
+  pagesUrl: `${baseUrl}/api/page`,
+  detailPageUrl: `${baseUrl}/api/page`,
 };
 
 export default setting;

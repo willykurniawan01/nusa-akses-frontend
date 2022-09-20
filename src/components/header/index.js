@@ -45,20 +45,14 @@ const Header = () => {
   };
 
   return (
-    <Navbar
-      className="shadow-sm"
-      collapseOnSelect
-      expand="lg"
-      bg="white"
-      fixed="top"
-    >
+    <Navbar className="shadow-sm" collapseOnSelect expand="lg" bg="white">
       <Container>
         <Navbar.Brand href="#home">
           <img src={logo} alt="" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="m-auto">
+          <Nav className="ms-auto">
             <Link className="nav-link" to="/">
               Beranda
             </Link>
@@ -71,6 +65,9 @@ const Header = () => {
             >
               <Link className="dropdown-item" to="/profile-perusahaan">
                 Profile Perusahaan
+              </Link>
+              <Link className="dropdown-item" to="/profile-perusahaan">
+                Sejarah Perusahaan
               </Link>
             </NavDropdown>
             <NavDropdown
@@ -98,31 +95,6 @@ const Header = () => {
                 </Link>
               );
             })}
-            <Nav.Link
-              className="nav-link"
-              href="https://mrtg.nusaakses.net.id/"
-            >
-              MRTG Nusa Akses
-            </Nav.Link>
-          </Nav>
-          <Nav>
-            <NavDropdown
-              title={
-                <span>
-                  <i class="bi bi-globe"></i> Bahasa Indonesia
-                  <i class="bi bi-chevron-down"></i>
-                </span>
-              }
-            >
-              <NavDropdown.Item href="#action/3.1">
-                {" "}
-                <img width="20" src={indonesia} alt="" /> Bahasa Indonesia
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                {" "}
-                <img width="20" src={unitedkingdom} alt="" /> English
-              </NavDropdown.Item>
-            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>

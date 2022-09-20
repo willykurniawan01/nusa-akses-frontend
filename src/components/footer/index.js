@@ -25,7 +25,7 @@ const Footer = () => {
     <div className="footer">
       <Container>
         <Row>
-          <Col xs={6} md={5}>
+          <Col xs={6} md={3}>
             <div className="footer-brand">
               <img className="footer-brand-logo" src={logo} />
               <span className="footer-brand-desc">
@@ -36,21 +36,18 @@ const Footer = () => {
               </span>
             </div>
           </Col>
-          {/* <Col xs={6} md={3}>
+          <Col xs={6} md={3}>
             <div className="footer-nav">
               <p className="footer-nav-header">Bantuan</p>
               <a href="#" className="footer-nav-link">
                 Pusat Bantuan
               </a>
               <a href="#" className="footer-nav-link">
-                Hubungi Kami
-              </a>
-              <a href="#" className="footer-nav-link">
-                Kendala
+                Laporan Kendala
               </a>
             </div>
-          </Col> */}
-          <Col xs={6} md={4}>
+          </Col>
+          <Col xs={6} md={3}>
             <div className="footer-nav">
               <p className="footer-nav-header">Layanan</p>
               {services.map(function (data, index) {
@@ -67,16 +64,15 @@ const Footer = () => {
               <a href="#" className="footer-nav-link">
                 Sejarah Perusahaan
               </a>
-              <a href="#" className="footer-nav-link">
-                Karir
-              </a>
             </div>
           </Col>
         </Row>
         <Row>
           <Col md={3}>
             <div className="footer-socialmedia">
-              <p className="footer-socialmedia-header">Tetap terhubung dengan kami</p>
+              <p className="footer-socialmedia-header">
+                Tetap terhubung dengan kami
+              </p>
               <div className="footer-socialmedia-nav">
                 <a href="" className="footer-socialmedia-nav-link">
                   <i class="bi bi-instagram"></i>
@@ -95,7 +91,9 @@ const Footer = () => {
       </Container>
       <div className="footer-copyright">
         <Container>
-          <p className="footer-copyright-text">© PT Daya Akses Nusantara, 2021.</p>
+          <p className="footer-copyright-text">
+            © PT Daya Akses Nusantara, 2021.
+          </p>
         </Container>
       </div>
     </div>

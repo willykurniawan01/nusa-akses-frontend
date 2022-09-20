@@ -1,20 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Header, Footer } from "../../components";
-import { Preloader } from "../../pages";
 import styles from "./index.module.css";
 import setting from "../../settings";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const Page = () => {
   let { id } = useParams();
   const [page, setPage] = useState([]);
-  const [preloader, setPreloader] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
-      setPreloader(false);
-    }, 1000);
-
     loadPage();
   }, [id]);
 
@@ -28,41 +22,54 @@ const Page = () => {
     }
   };
 
-  if (preloader) {
-    return <Preloader />;
-  } else {
-    return (
-      <div>
-        <Header />
-        <div className="container">
-          <div className="row mb-4" style={{ marginTop: 100 }}>
-            <div className="col-10">
-              <h2 className={styles.pageTitle}>{page.name}</h2>
-            </div>
-          </div>
-          <div className="row mb-4">
-            <div className="col">
-              <img
-                width="100%"
-                height="600px"
-                className={styles.rounded}
-                src={page.picture}
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-11">
-              <div
-                className={styles.pageContent}
-                dangerouslySetInnerHTML={{ __html: page.content }}
-              ></div>
-            </div>
-          </div>
+  return (
+    <div>
+      <Header />
+      <nav aria-label="breadcrumb">
+        <div className="container mt-3">
+          <ol className="breadcrumb">
+            <li className="breadcrumb-item">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="breadcrumb-item active" aria-current="page">
+              {page.name}
+            </li>
+          </ol>
         </div>
-        <Footer />
+      </nav>
+
+      <div className={styles.pageName}>
+        <div className="container">
+          <h1>{page.name}</h1>
+        </div>
       </div>
-    );
-  }
+
+      <div className="container py-5">
+        <div className="row">
+          <p className={styles.pageContent}>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
+            molestias rem quae nobis, omnis veniam exercitationem libero magni
+            nihil iste in sunt non dolorum, eligendi veritatis, nam quibusdam
+            amet officia. Deleniti suscipit repellendus id rem vero a qui
+            placeat natus dolores, similique consectetur distinctio cupiditate,
+            dolor quibusdam fugiat! Ut eum consequatur expedita culpa iure
+            delectus, amet earum distinctio illo. Dolorum, porro similique ab
+            veniam aliquam nobis aut error, dolorem nisi consectetur ipsum
+            corrupti perspiciatis ducimus, fugit molestias voluptas enim earum
+            laudantium vero neque cum dolores. Voluptates natus maxime, amet ab
+            adipisci sapiente sunt accusamus cumque numquam, animi officia
+            inventore dolores voluptate distinctio fuga placeat delectus
+            architecto? Veniam in officia debitis, quisquam totam voluptate
+            expedita? Perferendis ex dolor error amet quod hic ducimus illo
+            sint, modi accusamus cumque nihil, veniam vitae voluptates dolore?
+            Eligendi quae minus, illum odio, repellendus, totam iste magnam
+            debitis alias dolorem voluptas?
+          </p>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
 };
 
 export default Page;
