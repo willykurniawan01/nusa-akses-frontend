@@ -62,7 +62,6 @@ const Home = () => {
 
   return (
     <div>
-      <Header />
       <Slider slide={slide} />
       <div className="layanan mt-5">
         <Container>
@@ -156,7 +155,6 @@ const Home = () => {
           </div>
         </Container>
       </div>
-      <Footer />
     </div>
   );
 };

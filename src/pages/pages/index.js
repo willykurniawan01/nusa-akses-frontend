@@ -24,7 +24,6 @@ const Page = () => {
 
   return (
     <div>
-      <Header />
       <nav aria-label="breadcrumb">
         <div className="container mt-3">
           <ol className="breadcrumb">
@@ -67,7 +66,6 @@ const Page = () => {
           </p>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

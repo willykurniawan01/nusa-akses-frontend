@@ -1,6 +1,5 @@
 import {
   Home,
-  About,
   Profile,
   Berita,
   DetailBerita,
@@ -14,12 +13,6 @@ const AppRoutes = [
     path: "/",
     exact: true,
     component: Home,
-  },
-  {
-    name: "About",
-    path: "/about",
-    exact: true,
-    component: About,
   },
   {
     name: "Profile",

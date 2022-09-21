@@ -52,7 +52,6 @@ const Berita = () => {
 
   return (
     <div>
-      <Header />
       <nav className="navigation mt-5">
         <div className="container">
           <ol class="breadcrumb">
@@ -112,7 +111,6 @@ const Berita = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

@@ -37,7 +37,6 @@ const DetailServices = () => {
 
   return (
     <div>
-      <Header />
       <nav className="navigation mt-5">
         <div className="container">
           <ol class="breadcrumb">
@@ -88,7 +87,6 @@ const DetailServices = () => {
             </div> */}
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

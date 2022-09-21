@@ -12,6 +12,29 @@ body {
   padding: 0px;
 }
 
+.float-button {
+  outline: none;
+  border: none;
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #553df7;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.self-message {
+  background-color: #061e38;
+  color: #fff;
+}
+
 .btn-custom-primary {
   background-color: $indigo;
   box-shadow: none;
