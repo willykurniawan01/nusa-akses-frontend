@@ -1,4 +1,4 @@
-const baseUrl = "http://127.0.0.1:8000";
+const baseUrl = "https://nusa-akses-backend.tiabanautoservice.com";
 const setting = {
   beritaUrl: `${baseUrl}/api/post`,
   servicesUrl: `${baseUrl}/api/services`,
