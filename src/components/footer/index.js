@@ -162,7 +162,9 @@ const Footer = () => {
             <Col xs={6} md={3}>
               <div className="footer-nav">
                 <p className="footer-nav-header">Bantuan</p>
-
+                <a href="#" className="footer-nav-link">
+                  Pusat Bantuan
+                </a>
                 <a
                   href="#"
                   onClick={(e) => {
@@ -207,13 +209,13 @@ const Footer = () => {
                 </p>
                 <div className="footer-socialmedia-nav">
                   <a href="" className="footer-socialmedia-nav-link">
-                    <i class="bi bi-instagram"></i>
+                    <i className="bi bi-instagram"></i>
                   </a>
                   <a href="" className="footer-socialmedia-nav-link">
-                    <i class="bi bi-facebook"></i>
+                    <i className="bi bi-facebook"></i>
                   </a>
                   <a href="" className="footer-socialmedia-nav-link">
-                    <i class="bi bi-twitter"></i>
+                    <i className="bi bi-twitter"></i>
                   </a>
                 </div>
               </div>
@@ -233,65 +235,65 @@ const Footer = () => {
       <button
         onClick={handleButtonChat}
         id="chatButton"
-        class="float-button shadow"
+        className="float-button shadow"
       >
-        <i class="bi bi-chat-fill"></i>
+        <i className="bi bi-chat-fill"></i>
       </button>
 
       <Modal size="lg" show={showReport} onHide={handleCloseReport}>
         <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
-          <div class="container">
-            <div class="row">
-              <div class="form-group">
+          <div className="container">
+            <div className="row">
+              <div className="form-group">
                 <label>Tanggal</label>
                 <input
                   type="date"
-                  class="form-control mt-2"
+                  className="form-control mt-2"
                   name="date"
                   onChange={(e) => setDate(e.target.value)}
                 />
               </div>
             </div>
-            <div class="row mt-3">
-              <div class="form-group">
+            <div className="row mt-3">
+              <div className="form-group">
                 <label>Nama</label>
                 <input
                   type="text"
-                  class="form-control mt-2"
+                  className="form-control mt-2"
                   name="customer_name"
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
             </div>
-            <div class="row mt-3">
-              <div class="form-group">
+            <div className="row mt-3">
+              <div className="form-group">
                 <label>Problem</label>
                 <input
                   type="text"
-                  class="form-control mt-2"
+                  className="form-control mt-2"
                   name="problem"
                   onChange={(e) => setProblem(e.target.value)}
                 />
               </div>
             </div>
-            <div class="row mt-3">
-              <div class="form-group">
+            <div className="row mt-3">
+              <div className="form-group">
                 <label>Deskripsi</label>
                 <textarea
                   onChange={(e) => setDescription(e.target.value)}
                   name="description"
-                  class="form-control mt-2"
+                  className="form-control mt-2"
                 ></textarea>
               </div>
             </div>
-            <div class="row mt-3">
-              <div class="form-group">
+            <div className="row mt-3">
+              <div className="form-group">
                 <label>Alamat</label>
                 <textarea
                   onChange={(e) => setAddress(e.target.value)}
                   name="address"
-                  class="form-control mt-2"
+                  className="form-control mt-2"
                 ></textarea>
               </div>
             </div>
@@ -314,10 +316,10 @@ const Footer = () => {
           {chat.map((v) => {
             if (v.type == "guest-admin") {
               return (
-                <div class="row justify-content-end mb-2">
-                  <div class="col-6">
-                    <div class="card shadow-sm self-message">
-                      <div class="card-body">
+                <div className="row justify-content-end mb-2">
+                  <div className="col-6">
+                    <div className="card shadow-sm self-message">
+                      <div className="card-body">
                         <p>{v.message}</p>
                       </div>
                     </div>
@@ -326,10 +328,10 @@ const Footer = () => {
               );
             } else {
               return (
-                <div class="row mb-2">
-                  <div class="col-6">
-                    <div class="card shadow-sm">
-                      <div class="card-body">
+                <div className="row mb-2">
+                  <div className="col-6">
+                    <div className="card shadow-sm">
+                      <div className="card-body">
                         <p>{v.message}</p>
                       </div>
                     </div>
@@ -340,18 +342,18 @@ const Footer = () => {
           })}
         </Modal.Body>
         <Modal.Footer>
-          <div class="input-group">
+          <div className="input-group">
             <input
               type="text"
               onChange={(e) => setMessage(e.target.value)}
               placeholder="ketik pesan..."
               name="message"
-              class="form-control"
+              className="form-control"
             />
             <button
               onClick={handleSendChat}
               type="submit"
-              class="btn btn-primary"
+              className="btn btn-primary"
             >
               Kirim
             </button>
@@ -362,25 +364,25 @@ const Footer = () => {
       <Modal size="lg" show={showLoginChat} onHide={handleCloseLoginChat}>
         <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
-          <div class="container">
-            <div class="row">
-              <div class="form-group">
+          <div className="container">
+            <div className="row">
+              <div className="form-group">
                 <label>Email</label>
                 <input
                   type="text"
                   onChange={(e) => setEmail(e.target.value)}
-                  class="form-control mt-2"
+                  className="form-control mt-2"
                   name="email"
                 />
               </div>
             </div>
-            <div class="row mt-3">
-              <div class="form-group">
+            <div className="row mt-3">
+              <div className="form-group">
                 <label>Nama</label>
                 <input
                   type="text"
                   onChange={(e) => setUserName(e.target.value)}
-                  class="form-control mt-2"
+                  className="form-control mt-2"
                   name="name"
                 />
               </div>

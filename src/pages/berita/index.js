@@ -47,19 +47,19 @@ const Berita = () => {
 
   return (
     <div>
-      <nav className="navigation mt-5">
+      <nav className="navigation mt-3">
         <div className="container">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
+          <ol className="breadcrumb">
+            <li className="breadcrumb-item">
               <Link to="/">Home</Link>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">
+            <li className="breadcrumb-item active" aria-current="page">
               Berita
             </li>
           </ol>
         </div>
       </nav>
-      <div className="articles mt-5">
+      <div className="articles mt-3">
         <div className="container">
           <div className="row">
             <div className="col-5">
@@ -97,7 +97,7 @@ const Berita = () => {
                         className="btn btn-primary btn-lg mt-2 mb-3"
                         to={`berita/${data.slug}`}
                       >
-                        <i class="bi bi-arrow-right"></i>
+                        <i className="bi bi-arrow-right"></i>
                       </Link>
                     </Card.Body>
                   </Card>
