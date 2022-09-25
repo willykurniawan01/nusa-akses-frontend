@@ -94,9 +94,10 @@ const Berita = () => {
                       <Card.Img variant="top" src={data.picture} />
                       <Card.Body>
                         <Card.Title className="mt-3">
-                          <Link>{data.judul}</Link>
+                          <Link to={`berita/${data.slug}`}>{data.judul}</Link>
                         </Card.Title>
                         <Link
+                          name="detail-berita"
                           className="btn btn-primary btn-lg mt-2 mb-3"
                           to={`berita/${data.slug}`}
                         >

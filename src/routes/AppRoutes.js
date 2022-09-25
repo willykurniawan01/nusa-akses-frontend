@@ -5,6 +5,7 @@ import {
   DetailBerita,
   DetailServices,
   Pages,
+  SejarahPerusahaan,
 } from "../pages";
 
 const AppRoutes = [
@@ -44,6 +45,12 @@ const AppRoutes = [
     path: "/page/:id",
     exact: true,
     component: Pages,
+  },
+  {
+    name: "Pages",
+    path: "/sejarah-perusahaan",
+    exact: true,
+    component: SejarahPerusahaan,
   },
 ];
 

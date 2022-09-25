@@ -192,12 +192,12 @@ const Footer = () => {
             <Col xs={6} md={3}>
               <div className="footer-nav">
                 <p className="footer-nav-header">Perusahaan</p>
-                <a href="#" className="footer-nav-link">
+                <Link to="/profile-perusahaan" className="footer-nav-link">
                   Profil Perusahaan
-                </a>
-                <a href="#" className="footer-nav-link">
+                </Link>
+                <Link to="/sejarah-perusahaan" className="footer-nav-link">
                   Sejarah Perusahaan
-                </a>
+                </Link>
               </div>
             </Col>
           </Row>

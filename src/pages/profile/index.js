@@ -40,9 +40,9 @@ const Profile = () => {
                     best support team in the industry, we provide our customers
                     with Internet access with speeds in excess of 1 Gbps+.
                   </p>
-                  <button className="btn-transparent">
+                  {/* <button className="btn-transparent">
                     Selengkapnya <i class="bi bi-arrow-right-circle"></i>
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </Col>
@@ -88,24 +88,26 @@ const Profile = () => {
         <div className={styles.misi}>
           <div className="text" data-aos="fade-left">
             <div className={styles.textTitle}>
-              <h5>Pimpinan Perusahaan</h5>
+              <h5>Sejarah Perusahaan</h5>
             </div>
             <div className={styles.textContent}>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Corporis a vel, consequuntur dicta error quod omnis magni
-                quaerat tempore in aut numquam? Magni illo temporibus
-                asperiores, at distinctio ducimus consectetur fugiat! Facilis at
-                minus odio, aliquid sunt rerum voluptas cumque tenetur?
-                Voluptatem, fugit necessitatibus possimus sapiente eaque iusto
-                ipsam maiores!
+                Daya Akses Nusantara merupakan suatu organisasi yang bergerak
+                dalam jasa Internet dan pengembangan Aplikasi. Daya Akses
+                Nusantara memiliki kantor yang terletak di kota Batam (Jl.
+                Brigjen Katamso Komplek Pertokoan Central Barelang Raya Blok B-1
+                NO 6 Tanjung Uncang, Batam, Indonesia). Daya Akses Nusantara
+                baru didirikan pada tahun Desember 2019. Daya Akses Nusantara
+                bergerak dengan dua orang pendiri yakni Bapak Yulvizon dan
+                Sukristiyo. Organisasi ini bisa termasuk baru beroperasi dalam
+                dunia IT di kota Batam.
               </p>
             </div>
           </div>
 
-          <button className={styles.buttonTransparent}>
+          {/* <button className={styles.buttonTransparent}>
             Selengkapnya <i class="bi bi-arrow-right-circle"></i>
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
