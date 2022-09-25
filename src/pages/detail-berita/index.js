@@ -51,7 +51,7 @@ const DetailBerita = () => {
       </nav>
       <div className="container">
         <div className="row">
-          <div className="col-sm-9">
+          <div className="col-sm-12">
             <div className="row">
               <div className="col">
                 <img src={beritaDetail.picture} className="img-fluid" alt="" />
@@ -66,20 +66,6 @@ const DetailBerita = () => {
               </div>
             </div>
           </div>
-          {/* <div className="col-sm-2 offset-sm-1">
-              <div className="row">
-                <div className="col">
-                  <img src={banner} className="img-fluid" alt="" />
-                  <div className={style.postCardDate}>
-                    <span>20 September 2021</span>
-                  </div>
-                  <Link className={style.postCardTitle} href="">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Magnam, aut!
-                  </Link>
-                </div>
-              </div>
-            </div> */}
         </div>
       </div>
     </div>

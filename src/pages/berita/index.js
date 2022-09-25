@@ -16,7 +16,6 @@ import setting from "../../settings";
 
 const Berita = () => {
   const [berita, setBerita] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [keyword, setKeyword] = useState("");
 
   useEffect(() => {
@@ -24,26 +23,22 @@ const Berita = () => {
   }, []);
 
   const loadBerita = async () => {
-    setLoading(true);
     try {
       const response = await fetch(`${setting.beritaUrl}`);
       const data = await response.json();
       setBerita(data);
-      setLoading(false);
     } catch (res) {
       console.log(res);
     }
   };
 
   const searchBerita = async () => {
-    setLoading(true);
     try {
       const response = await fetch(
         `${setting.baseUrl}/api/post-search/${keyword}`
       );
       const data = await response.json();
       setBerita(data);
-      setLoading(false);
       console.log(data);
     } catch (error) {
       console.log(error);
@@ -84,31 +79,31 @@ const Berita = () => {
             </div>
           </div>
           <div className="row mt-5 mb-5">
-            {loading ? (
-              <Spinner animation="grow m-auto" size="lg" />
-            ) : (
-              berita.map(function (data, index) {
-                return (
-                  <div className="col-12 col-sm-4">
-                    <Card className="shadow-sm">
-                      <Card.Img variant="top" src={data.picture} />
-                      <Card.Body>
-                        <Card.Title className="mt-3">
-                          <Link to={`berita/${data.slug}`}>{data.judul}</Link>
-                        </Card.Title>
-                        <Link
-                          name="detail-berita"
-                          className="btn btn-primary btn-lg mt-2 mb-3"
-                          to={`berita/${data.slug}`}
-                        >
-                          <i class="bi bi-arrow-right"></i>
-                        </Link>
-                      </Card.Body>
-                    </Card>
-                  </div>
-                );
-              })
-            )}
+            {berita.map(function (data, index) {
+              return (
+                <div className="col-12 col-sm-4">
+                  <Card className="shadow-sm">
+                    <Card.Img
+                      style={{ height: 250 }}
+                      variant="top"
+                      src={data.picture}
+                    />
+                    <Card.Body>
+                      <Card.Title className="mt-3">
+                        <Link to={`berita/${data.slug}`}>{data.judul}</Link>
+                      </Card.Title>
+                      <Link
+                        name="detail-berita"
+                        className="btn btn-primary btn-lg mt-2 mb-3"
+                        to={`berita/${data.slug}`}
+                      >
+                        <i class="bi bi-arrow-right"></i>
+                      </Link>
+                    </Card.Body>
+                  </Card>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

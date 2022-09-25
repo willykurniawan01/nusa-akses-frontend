@@ -162,9 +162,7 @@ const Footer = () => {
             <Col xs={6} md={3}>
               <div className="footer-nav">
                 <p className="footer-nav-header">Bantuan</p>
-                <a href="#" className="footer-nav-link">
-                  Pusat Bantuan
-                </a>
+
                 <a
                   href="#"
                   onClick={(e) => {
